@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 
 
-//connect to DB
-// const dbURL = 'mongodb://localhost/hospital_API';
-const dbURL = `mongodb+srv://tushargupta24042002:Tushar24042002@hospital-api.cvallai.mongodb.net/hospital-api?retryWrites=true&w=majority`;
-mongoose.connect(dbURL, { useNewUrlParser: true ,useUnifiedTopology: true });
+const dbURI = 'mongodb+srv://tushargupta24042002:Tushar24042002@cluster0.h9cmx1x.mongodb.net/hospitalapp?retryWrites=true&w=majority';
+
+mongoose.connect(dbURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, "Error connecting to db"));
